@@ -3,12 +3,25 @@ import React from "react";
 import "./Profile.sass";
 
 const Profile = () => {
-  const user = JSON.parse (localStorage.getItem ("profile"));
+  const user = JSON.parse(localStorage.getItem("profile"));
+
+  // Fn to define correct word after age
+  const ageInfo = (n) => {
+    return (
+      n +
+      " " +
+      (n % 10 === 1 && n % 100 !== 11
+        ? "год"
+        : n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 10 || n % 100 >= 20)
+        ? "года"
+        : "лет")
+    );
+  };
 
   const parentData =
     user.name === "" || user.age === ""
       ? "Информация отсутствует!"
-      : `${user.name}, ${user.age} лет`;
+      : `${user.name}, ${ageInfo(user.age)}`;
 
   return (
     <section className="main profile">
@@ -24,7 +37,7 @@ const Profile = () => {
           user.children.map((child, index) => {
             return (
               <p key={index} className="profile__text child">
-                {child.name}, {child.age} лет
+                {child.name}, {ageInfo(child.age)}
               </p>
             );
           })
