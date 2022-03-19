@@ -1,0 +1,23 @@
+@mixin display-flex-column
+  display: flex
+  flex-direction: column
+  align-items: flex-start
+  
+@mixin flex-align
+  display: flex
+  align-items: center
+
+@mixin position-center
+  @include flex-align
+  justify-content: center
+
+@mixin position-space-between
+  @include flex-align
+  justify-content: space-between
+
+@mixin title
+  color: $secondary-color-black
+  font-size: $text-size-l
+  line-height: 24px
+  padding: 0
+  margin: 0

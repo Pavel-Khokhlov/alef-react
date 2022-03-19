@@ -1,0 +1,42 @@
+@import ../../sass/index
+
+.input
+  position: relative
+  &__label
+    position: absolute
+    top: 50%
+    left: 14px
+    transform: translate(0, -50%)
+    font-size: $text-size-l
+    margin: 0
+    transition: all 0.5s ease-in-out
+    &._active
+      font-size: $text-size-s
+      color: $fourth-color
+      top: 30%
+  &__field
+    width: 100%
+    height: 56px
+    outline: none
+    border: 1px solid $third-color
+    border-radius: 4px
+    padding: 28px 0 6px 14px
+    box-sizing: border-box
+    &[type="number"]
+      appearance: none
+      &::-webkit-outer-spin-button, &::-webkit-inner-spin-button
+        -webkit-appearance: none
+      &:hover, &:focus
+        appearance: none
+    &:focus
+      border: 1px solid $secondary-color
+    &:focus .input
+      top: 0
+    &:-webkit-autofill, &:-webkit-autofill:hover, &:-webkit-autofill:focus, &:-webkit-autofill:active
+      -webkit-background-clip: text
+      -webkit-border-image: none
+      box-sizing: border-box
+    &_text
+      font-size: $text-size-m
+      line-height: 1.1
+      margin: 0

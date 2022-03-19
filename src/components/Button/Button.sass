@@ -1,0 +1,39 @@
+@import ../../sass/index
+  
+.button
+  /* сброс стилей */
+  text-decoration: none
+  cursor: pointer
+  /* настройки кнопок */
+  opacity: 1
+  transition: 0.5s
+  box-sizing: border-box
+  background: transparent
+  &:hover
+    opacity: 0.5
+  &:active
+    outline-style: none
+  &:focus
+    outline-style: none
+  &__submit
+    width: 118px
+    height: 44px
+    background: $secondary-color
+    border: none
+    border-radius: 100px
+    color: $primary-color-white
+  &__add
+    @include position-center
+    gap: 4px
+    width: 204px
+    height: 44px
+    border: 2px solid $secondary-color
+    box-sizing: border-box
+    border-radius: 100px
+    color: $secondary-color
+    &.disabled
+      pointer-events: none
+      cursor: not-allowed
+  &__delete
+    border: none
+    color: $secondary-color

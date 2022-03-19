@@ -1,0 +1,20 @@
+@import ../../sass/index
+  
+.nav
+  &__list
+    list-style: none
+    padding: 0
+    margin: 0
+    display: flex
+    gap: MIN(24px, 3vw)
+    @media only screen and (max-width: 768px)
+      margin-right: 3vw
+  &__link
+    text-decoration: none
+    font-size: $text-size-m
+    color: $fourth-color
+    transition: $app-transition
+    &:hover
+      color: $primary-color-black
+    &.active
+      color: $primary-color-black

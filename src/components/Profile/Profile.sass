@@ -1,0 +1,20 @@
+@import ../../sass/index
+  
+.profile
+  @include display-flex-column
+  gap: 60px
+  padding-top: 30px
+  &__block
+    @include display-flex-column
+    gap: 20px
+  &__title
+    @include title
+    font-weight: $text-weight-medium
+  &__text
+    @include title
+    font-weight: $text-weight-bold
+    &.child
+      padding: 10px 20px
+      background-color: $third-color
+      border-radius: 5px
+      width: max-content
