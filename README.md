@@ -1,6 +1,6 @@
 # TEST PROJECT FOR ALEF
 
-[Link to the project](https://github.com/facebook/create-react-app).
+[Link to the project](https://pavel-khokhlov.github.io/alef-react/)
 
 ## Technologies
 
