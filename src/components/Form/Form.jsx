@@ -2,10 +2,8 @@ import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addChild, changeInput, resetUser } from "../../store/userSlice";
 
-import PlusPNG from "../../images/plus.png";
 import Button from "../Button/Button";
 import Input from "../Input/Input";
-
 
 import "./Form.sass";
 import ChildList from "../ChildList/ChildList";
@@ -25,7 +23,7 @@ const Form = () => {
 
   const handleInput = (target) => {
     dispatch(changeInput({ name: target.name, value: target.value }));
-  }
+  };
 
   const handleAddChild = () => {
     const dateId = Date.now();
@@ -34,9 +32,9 @@ const Form = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    localStorage.setItem ("profile", JSON.stringify(user));
+    localStorage.setItem("profile", JSON.stringify(user));
     dispatch(resetUser());
-    history.push('/profile');
+    history.push("/profile");
   };
 
   return (
@@ -45,14 +43,30 @@ const Form = () => {
         <div className="form__legend">
           <h2 className="form__title">Персональные данные</h2>
         </div>
-        <Input type="text" labelName="Имя" inputName="name" onChange={handleInput} value={user.name} />
-        <Input type="number" labelName="Возраст" inputName="age" onChange={handleInput} value={user.age} />
+        <Input
+          type="text"
+          labelName="Имя"
+          inputName="name"
+          onChange={handleInput}
+          value={user.name}
+        />
+        <Input
+          type="number"
+          labelName="Возраст"
+          inputName="age"
+          onChange={handleInput}
+          value={user.age}
+        />
       </fieldset>
       <fieldset className="form__area">
         <div className="form__legend">
           <h2 className="form__title">Дети (макс. 5)</h2>
-          <Button type="button" className={addButtonClassName} onClick={handleAddChild}>
-            <img src={PlusPNG} alt="иконка плюс кнопка добавить" />
+          <Button
+            type="button"
+            className={addButtonClassName}
+            onClick={handleAddChild}
+          >
+            <span className="button__add_plus" />
             <span>Добавить ребенка</span>
           </Button>
         </div>

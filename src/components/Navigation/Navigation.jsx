@@ -8,7 +8,7 @@ const Navigation = () => {
     <nav className="nav">
       <ul className="nav__list">
         <li>
-          <NavLink exact to="/" className="nav__link" activeClassName="active">
+          <NavLink to="/" className="nav__link" activeClassName="active">
             Форма
           </NavLink>
         </li>

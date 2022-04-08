@@ -3,7 +3,12 @@ import React from "react";
 import "./Profile.sass";
 
 const Profile = () => {
-  const user = JSON.parse(localStorage.getItem("profile"));
+  let user;
+  if(localStorage.getItem('profile') === null) {
+    user = {name: "", age: "", children: []};
+  } else {
+    user = JSON.parse(localStorage.getItem("profile"));
+  }
 
   // Fn to define correct word after age
   const ageInfo = (n) => {
